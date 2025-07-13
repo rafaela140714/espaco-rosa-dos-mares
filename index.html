@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Espaço Multiterapêutico Rosa dos Mares</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #7e57c2, #ba68c8);
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      background: #6a1b9a;
+      padding: 30px 20px;
+    }
+
+    header h1 {
+      font-size: 42px;
+      color: #fdd835;
+      margin: 0 0 10px 0;
+      text-shadow: 2px 2px #4a148c;
+    }
+
+    header h2 {
+      font-size: 24px;
+      color: #fff;
+      margin: 0;
+    }
+
+    h2.title {
+      margin-top: 50px;
+      font-size: 28px;
+      color: #fdd835;
+    }
+
+    .therapy-icons {
+      margin: 40px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 900px;
+    }
+
+    .therapy-icons button {
+      display: inline-block;
+      width: 120px;
+      height: 120px;
+      background: #FFD700; /* Dourado vibrante */
+      border-radius: 50%;
+      border: none;
+      color: #333;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      padding: 10px;
+      box-sizing: border-box;
+      white-space: normal;
+      line-height: 1.2;
+    }
+
+    .therapy-icons button:hover {
+      background: #FFC107;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 99;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      color: #333;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      text-align: left;
+      position: relative;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+      color: #6a1b9a;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px; right: 15px;
+      color: #333;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .contact-form {
+      text-align: left;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-form button {
+      background: #6a1b9a;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #4a148c;
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      margin-top: 20px;
+      background: #25D366;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    footer {
+      background: #4a148c;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #eee;
+      margin-top: 40px;
+    }
+  </style>
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Espaço Rosa dos Mares</h1>
+    <h2>Rafaela – Terapeuta Integrativa</h2>
+  </header>
+
+  <h2 class="title">Clique na Terapia</h2>
+
+  <div class="therapy-icons">
+    <button onclick="openModal('reiki')">Reiki</button>
+    <button onclick="openModal('constelacao')">Constelação</button>
+    <button onclick="openModal('baralho')">Baralho Cigano</button>
+    <button onclick="openModal('mesa')">Mesa Radiônica</button>
+    <button onclick="openModal('barras')">Barras Access</button>
+    <button onclick="openModal('moneyreiki')">Money Reiki</button>
+    <button onclick="openModal('cursos')">Cursos<br><small>(Em breve)</small></button>
+    <button onclick="openModal('contato')">Contato</button>
+  </div>
+
+  <!-- Modals Terapias -->
+  <div id="reiki" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('reiki')">&times;</span>
+      <h3>🌿 Reiki</h3>
+      <p>O Reiki é uma técnica de cura energética que promove equilíbrio físico, emocional e espiritual.  
+         Atua desbloqueando energias estagnadas, trazendo relaxamento profundo e bem-estar.  
+         Indicado para aliviar estresse, dores e ansiedade, restaurando o fluxo vital do corpo.</p>
+    </div>
+  </div>
+
+  <div id="constelacao" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('constelacao')">&times;</span>
+      <h3>🌿 Constelação Familiar</h3>
+      <p>A Constelação Sistêmica traz à tona emaranhamentos familiares inconscientes, permitindo uma nova visão sobre relacionamentos.  
+         É uma ferramenta poderosa para reconciliação, cura de mágoas antigas e resgate da força do sistema familiar.  
+         Ideal para quem deseja romper padrões repetitivos.</p>
+    </div>
+  </div>
+
+  <div id="baralho" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('baralho')">&times;</span>
+      <h3>🌿 Baralho Cigano</h3>
+      <p>O Baralho Cigano é um oráculo que revela caminhos e possibilidades, guiando suas escolhas com clareza.  
+         Cada carta carrega símbolos que despertam insights profundos, ampliando a consciência.  
+         Excelente para autoconhecimento e orientação em decisões importantes.</p>
+    </div>
+  </div>
+
+  <div id="mesa" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('mesa')">&times;</span>
+      <h3>🌿 Mesa Radiônica</h3>
+      <p>A Mesa Radiônica atua na harmonização e limpeza energética em nível quântico.  
+         Trabalha crenças limitantes, bloqueios emocionais e energias densas, trazendo equilíbrio em todas as áreas da vida.  
+         Uma técnica versátil para transformar situações complexas.</p>
+    </div>
+  </div>
+
+  <div id="barras" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('barras')">&times;</span>
+      <h3>🌿 Barras de Access</h3>
+      <p>As Barras de Access são 32 pontos na cabeça que, ao serem ativados, liberam crenças limitantes e padrões de comportamento.  
+         Proporciona leveza mental, clareza e expansão de consciência.  
+         Ideal para quem busca mais possibilidades e facilidade na vida.</p>
+    </div>
+  </div>
+
+  <div id="moneyreiki" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('moneyreiki')">&times;</span>
+      <h3>🌿 Money Reiki</h3>
+      <p>O Money Reiki ativa e potencializa o fluxo da prosperidade na sua vida financeira.  
+         Remove bloqueios de escassez e crenças limitantes sobre o dinheiro.  
+         Harmoniza sua energia com a abundância, atraindo novas oportunidades de ganhos.</p>
+    </div>
+  </div>
+
+  <!-- Modal Cursos -->
+  <div id="cursos" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('cursos')">&times;</span>
+      <h3>📚 Cursos - Em Breve</h3>
+      <p>Estamos preparando conteúdos incríveis para você! Em breve, os cursos estarão disponíveis para inscrição.</p>
+      <p>Deixe seus dados para ser avisado assim que as inscrições abrirem:</p>
+      <form class="contact-form" id="cursoForm" onsubmit="submitCursoForm(event)" autocomplete="off" novalidate>
+        <label>Nome Completo:</label>
+        <input type="text" name="nome" placeholder="Seu nome completo" required autocomplete="off" />
+        <label>E-mail:</label>
+        <input type="email" name="email" placeholder="Seu e-mail" required autocomplete="off" />
+        <label>Telefone:</label>
+        <input type="tel" name="telefone" placeholder="(XX) XXXXX-XXXX" autocomplete="off" />
+        <label>Mensagem (opcional):</label>
+        <textarea name="mensagem" rows="3" placeholder="Conte-nos o que espera dos cursos" autocomplete="off"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <p id="cursoFormMsg" style="color:green; display:none; margin-top: 10px;">Obrigado! Em breve você será avisado.</p>
+    </div>
+  </div>
+
+  <!-- Modal Contato -->
+  <div id="contato" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('contato')">&times;</span>
+      <h3>📞 Contato</h3>
+      <form class="contact-form" autocomplete="off" novalidate onsubmit="submitContatoForm(event)">
+        <label>Nome:</label>
+        <input type="text" name="nome" placeholder="Seu nome" required autocomplete="off" />
+        <label>E-mail:</label>
+        <input type="email" name="email" placeholder="Seu e-mail" required autocomplete="off" />
+        <label>Telefone:</label>
+        <input type="tel" name="telefone" placeholder="(XX) XXXXX-XXXX" autocomplete="off" />
+        <label>Escolha a terapia:</label>
+        <select name="terapia" autocomplete="off">
+          <option>Reiki</option>
+          <option>Constelação Familiar</option>
+          <option>Baralho Cigano</option>
+          <option>Mesa Radiônica</option>
+          <option>Barras Access</option>
+          <option>Money Reiki</option>
+        </select>
+        <label>Relate seu caso:</label>
+        <textarea name="descricao" rows="4" placeholder="Descreva seu problema ou objetivo" autocomplete="off"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <p id="contatoMsg" style="color:green; display:none; margin-top: 10px;">Mensagem enviada! Em breve entraremos em contato.</p>
+      <p>Ou fale direto:</p>
+      <a href="https://wa.me/5547991416523" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+        Fale no WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Espaço Multiterapêutico Rosa dos Mares. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    // Simulação do envio do formulário cursos (dados não armazenados, nem exibidos)
+    function submitCursoForm(event) {
+      event.preventDefault();
+      const form = event.target;
+      form.style.display = 'none';
+      document.getElementById('cursoFormMsg').style.display = 'block';
+      // Aqui pode integrar envio real via backend ou serviço externo (email, API)
+    }
+
+    // Simulação do envio do formulário contato (dados não armazenados, nem exibidos)
+    function submitContatoForm(event) {
+      event.preventDefault();
+      const form = event.target;
+      form.style.display = 'none';
+      document.getElementById('contatoMsg').style.display = 'block';
+      // Aqui pode integrar envio real via backend ou serviço externo (email, API)
+    }
+  </script>
+</body>
+</html>
